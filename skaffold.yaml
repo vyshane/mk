@@ -1,0 +1,14 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+  - imageName: vyshane/mk
+deploy:
+  helm:
+    releases:
+    - name: mk
+      chartPath: helm
+      values:
+        image: vyshane/mk

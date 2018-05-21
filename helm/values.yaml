@@ -1,0 +1,36 @@
+# Default values for mk helm.
+# Declare variables to be passed into templates.
+replicaCount: 1
+image:
+  repository: mk
+  tag: stable
+  pullPolicy: IfNotPresent
+service:
+  name: mk
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 80
+ingress:
+  enabled: false
+  # Used to create an Ingress record.
+  hosts:
+    - mk.local
+  annotations:
+    # kubernetes.io/ingress.class: mk
+    # kubernetes.io/tls-acme: "true"
+  tls:
+    # Secrets must be manually created in the namespace.
+    # - secretName: mk-tls
+    #   hosts:
+    #     - mk.local
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi

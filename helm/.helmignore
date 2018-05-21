@@ -1,0 +1,15 @@
+# Common VCS dirs
+.git/
+.gitignore
+
+# Common backup files
+*.swp
+*.bak
+*.tmp
+*~
+
+# IDEs
+.idea/
+
+# macOS
+**.DS_Store

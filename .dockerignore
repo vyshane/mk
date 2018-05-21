@@ -1,0 +1,19 @@
+README.md
+Makefile
+.dockerignore
+.gitignore
+helm/
+
+target/streams/
+target/scala-2.12/
+
+# sbt
+project/project/
+project/target/
+
+# IDEs
+.idea/
+.idea_modules/
+
+# macOS
+**.DS_Store
