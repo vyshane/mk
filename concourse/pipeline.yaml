@@ -1,0 +1,24 @@
+---
+resources:
+- name: mk
+  type: git
+  source:
+    uri: https://github.com/vyshane/mk.git
+    branch: master
+
+jobs:
+- name: test
+  serial: true
+  plan:
+  - get: mk
+  - task: sbt-test
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: { repository: hseeberger/scala-sbt, tag: 8u171_2.12.6_1.1.5 }
+      inputs:
+        - name: mk
+      run:
+        path: sbt
+        args: [test]
