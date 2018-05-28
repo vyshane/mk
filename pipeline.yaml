@@ -11,6 +11,7 @@ jobs:
   serial: true
   plan:
   - get: mk
+    trigger: true
   - task: sbt-test
     config:
       platform: linux
