@@ -4,6 +4,8 @@ WORKDIR /build
 COPY project project
 COPY build.sbt .
 RUN sbt update
+# Run tests
+RUN sbt test
 # Then build
 COPY . .
 RUN sbt stage
