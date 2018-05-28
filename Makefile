@@ -7,3 +7,6 @@ test:
 
 build:
 	skaffold build
+
+deploy:
+	skaffold run
